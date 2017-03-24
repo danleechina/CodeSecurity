@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		376062BF1E852FA600B410B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062BE1E852FA600B410B8 /* AppDelegate.m */; };
+		376062C21E852FA600B410B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062C11E852FA600B410B8 /* main.m */; };
+		376062C41E852FA600B410B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 376062C31E852FA600B410B8 /* Assets.xcassets */; };
+		376062C71E852FA600B410B8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376062C51E852FA600B410B8 /* MainMenu.xib */; };
+		376062D51E852FB500B410B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376062D41E852FB500B410B8 /* Cocoa.framework */; };
+		376062DB1E852FB500B410B8 /* DLObfuscationExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062DA1E852FB500B410B8 /* DLObfuscationExtension.m */; };
+		376062DE1E852FB500B410B8 /* DLObfuscationCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062DD1E852FB500B410B8 /* DLObfuscationCommand.m */; };
+		376062E21E852FB500B410B8 /* Obfuscation.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 376062D21E852FB500B410B8 /* Obfuscation.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		376062E91E85318900B410B8 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062E81E85318900B410B8 /* NSString+Extension.m */; };
+		376062EB1E85319C00B410B8 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062E81E85318900B410B8 /* NSString+Extension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		376062E01E852FB500B410B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 376062B21E852FA600B410B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 376062D11E852FB500B410B8;
+			remoteInfo = Obfuscation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		376062E61E852FB500B410B8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				376062E21E852FB500B410B8 /* Obfuscation.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		376062BA1E852FA600B410B8 /* CodeSecurity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeSecurity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		376062BD1E852FA600B410B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		376062BE1E852FA600B410B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		376062C11E852FA600B410B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		376062C31E852FA600B410B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		376062C61E852FA600B410B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		376062C81E852FA600B410B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376062D21E852FB500B410B8 /* Obfuscation.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Obfuscation.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		376062D41E852FB500B410B8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		376062D81E852FB500B410B8 /* Obfuscation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Obfuscation.entitlements; sourceTree = "<group>"; };
+		376062D91E852FB500B410B8 /* DLObfuscationExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLObfuscationExtension.h; sourceTree = "<group>"; };
+		376062DA1E852FB500B410B8 /* DLObfuscationExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLObfuscationExtension.m; sourceTree = "<group>"; };
+		376062DC1E852FB500B410B8 /* DLObfuscationCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLObfuscationCommand.h; sourceTree = "<group>"; };
+		376062DD1E852FB500B410B8 /* DLObfuscationCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLObfuscationCommand.m; sourceTree = "<group>"; };
+		376062DF1E852FB500B410B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376062E71E85318900B410B8 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "Utils/NSString+Extension.h"; sourceTree = "<group>"; };
+		376062E81E85318900B410B8 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "Utils/NSString+Extension.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		376062B71E852FA600B410B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		376062CF1E852FB500B410B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				376062D51E852FB500B410B8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		376062B11E852FA600B410B8 = {
+			isa = PBXGroup;
+			children = (
+				376062EA1E85319200B410B8 /* Utils */,
+				376062BC1E852FA600B410B8 /* CodeSecurity */,
+				376062D61E852FB500B410B8 /* Obfuscation */,
+				376062D31E852FB500B410B8 /* Frameworks */,
+				376062BB1E852FA600B410B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		376062BB1E852FA600B410B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				376062BA1E852FA600B410B8 /* CodeSecurity.app */,
+				376062D21E852FB500B410B8 /* Obfuscation.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		376062BC1E852FA600B410B8 /* CodeSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				376062BD1E852FA600B410B8 /* AppDelegate.h */,
+				376062BE1E852FA600B410B8 /* AppDelegate.m */,
+				376062C31E852FA600B410B8 /* Assets.xcassets */,
+				376062C51E852FA600B410B8 /* MainMenu.xib */,
+				376062C81E852FA600B410B8 /* Info.plist */,
+				376062C01E852FA600B410B8 /* Supporting Files */,
+			);
+			path = CodeSecurity;
+			sourceTree = "<group>";
+		};
+		376062C01E852FA600B410B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				376062C11E852FA600B410B8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		376062D31E852FB500B410B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				376062D41E852FB500B410B8 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		376062D61E852FB500B410B8 /* Obfuscation */ = {
+			isa = PBXGroup;
+			children = (
+				376062D91E852FB500B410B8 /* DLObfuscationExtension.h */,
+				376062DA1E852FB500B410B8 /* DLObfuscationExtension.m */,
+				376062DC1E852FB500B410B8 /* DLObfuscationCommand.h */,
+				376062DD1E852FB500B410B8 /* DLObfuscationCommand.m */,
+				376062DF1E852FB500B410B8 /* Info.plist */,
+				376062D71E852FB500B410B8 /* Supporting Files */,
+			);
+			path = Obfuscation;
+			sourceTree = "<group>";
+		};
+		376062D71E852FB500B410B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				376062D81E852FB500B410B8 /* Obfuscation.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		376062EA1E85319200B410B8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				376062E71E85318900B410B8 /* NSString+Extension.h */,
+				376062E81E85318900B410B8 /* NSString+Extension.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		376062B91E852FA600B410B8 /* CodeSecurity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 376062CB1E852FA600B410B8 /* Build configuration list for PBXNativeTarget "CodeSecurity" */;
+			buildPhases = (
+				376062B61E852FA600B410B8 /* Sources */,
+				376062B71E852FA600B410B8 /* Frameworks */,
+				376062B81E852FA600B410B8 /* Resources */,
+				376062E61E852FB500B410B8 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				376062E11E852FB500B410B8 /* PBXTargetDependency */,
+			);
+			name = CodeSecurity;
+			productName = CodeSecurity;
+			productReference = 376062BA1E852FA600B410B8 /* CodeSecurity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		376062D11E852FB500B410B8 /* Obfuscation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 376062E31E852FB500B410B8 /* Build configuration list for PBXNativeTarget "Obfuscation" */;
+			buildPhases = (
+				376062CE1E852FB500B410B8 /* Sources */,
+				376062CF1E852FB500B410B8 /* Frameworks */,
+				376062D01E852FB500B410B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Obfuscation;
+			productName = Obfuscation;
+			productReference = 376062D21E852FB500B410B8 /* Obfuscation.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		376062B21E852FA600B410B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Dan Lee";
+				TargetAttributes = {
+					376062B91E852FA600B410B8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VCJVQ6T6G2;
+						ProvisioningStyle = Automatic;
+					};
+					376062D11E852FB500B410B8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VCJVQ6T6G2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 376062B51E852FA600B410B8 /* Build configuration list for PBXProject "CodeSecurity" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 376062B11E852FA600B410B8;
+			productRefGroup = 376062BB1E852FA600B410B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				376062B91E852FA600B410B8 /* CodeSecurity */,
+				376062D11E852FB500B410B8 /* Obfuscation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		376062B81E852FA600B410B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				376062C41E852FA600B410B8 /* Assets.xcassets in Resources */,
+				376062C71E852FA600B410B8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		376062D01E852FB500B410B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		376062B61E852FA600B410B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				376062C21E852FA600B410B8 /* main.m in Sources */,
+				376062E91E85318900B410B8 /* NSString+Extension.m in Sources */,
+				376062BF1E852FA600B410B8 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		376062CE1E852FB500B410B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				376062DB1E852FB500B410B8 /* DLObfuscationExtension.m in Sources */,
+				376062EB1E85319C00B410B8 /* NSString+Extension.m in Sources */,
+				376062DE1E852FB500B410B8 /* DLObfuscationCommand.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		376062E11E852FB500B410B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 376062D11E852FB500B410B8 /* Obfuscation */;
+			targetProxy = 376062E01E852FB500B410B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		376062C51E852FA600B410B8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				376062C61E852FA600B410B8 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		376062C91E852FA600B410B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		376062CA1E852FA600B410B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		376062CC1E852FA600B410B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCJVQ6T6G2;
+				INFOPLIST_FILE = CodeSecurity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danlee.CodeSecurity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		376062CD1E852FA600B410B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCJVQ6T6G2;
+				INFOPLIST_FILE = CodeSecurity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danlee.CodeSecurity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		376062E41E852FB500B410B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Obfuscation/Obfuscation.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCJVQ6T6G2;
+				INFOPLIST_FILE = Obfuscation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danlee.CodeSecurity.Obfuscation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		376062E51E852FB500B410B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Obfuscation/Obfuscation.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCJVQ6T6G2;
+				INFOPLIST_FILE = Obfuscation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danlee.CodeSecurity.Obfuscation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		376062B51E852FA600B410B8 /* Build configuration list for PBXProject "CodeSecurity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				376062C91E852FA600B410B8 /* Debug */,
+				376062CA1E852FA600B410B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		376062CB1E852FA600B410B8 /* Build configuration list for PBXNativeTarget "CodeSecurity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				376062CC1E852FA600B410B8 /* Debug */,
+				376062CD1E852FA600B410B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		376062E31E852FB500B410B8 /* Build configuration list for PBXNativeTarget "Obfuscation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				376062E41E852FB500B410B8 /* Debug */,
+				376062E51E852FB500B410B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 376062B21E852FA600B410B8 /* Project object */;
+}
