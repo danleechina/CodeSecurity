@@ -7,89 +7,13 @@
 //
 
 #import "DLObfuscationCommand.h"
+#import "DLObfuscationExtension.h"
 #import "NSString+Extension.h"
+#import "NSData+Extension.h"
+#import "DLUnExcapeString.h"
+#import "DLXcodeKit.h"
 
-
-BOOL isSelectedText(NSArray<XCSourceTextRange *>*selections) {
-    if (selections.count == 1
-        && selections[0].start.line == selections[0].end.line
-        && selections[0].start.column == selections[0].end.column) {
-        return NO;
-    }
-    return YES;
-}
-
-BOOL isOCHeaderOrSourceFile(NSString *uti) {
-    return [uti isEqualToString:@"public.c-header"] || [uti isEqualToString:@"public.objective-c-source"];
-}
-
-NSArray *getSelectedStrings(NSArray *lines, NSArray *selections) {
-    if (!isSelectedText(selections)) {
-        return nil;
-    }
-    NSMutableArray *selectedStrings = [NSMutableArray arrayWithCapacity:selections.count];
-    for (XCSourceTextRange *textRange in selections) {
-        NSInteger startLine = textRange.start.line;
-        NSInteger endLine = textRange.end.line;
-        NSInteger startColumn = textRange.start.column;
-        NSInteger endColumn = textRange.end.column;
-        NSMutableString *result = [NSMutableString new];
-        for (NSInteger lineIndex = startLine; lineIndex <= endLine; lineIndex ++) {
-            if (startLine == endLine) {
-                [result appendString:[lines[startLine] substringWithRange:NSMakeRange(startColumn, endColumn - startColumn)]];
-            } else if (lineIndex == endLine) {
-                [result appendString:[lines[endLine] substringToIndex:endColumn]];
-            } else if (lineIndex == startLine) {
-                [result appendString:[lines[startLine] substringFromIndex:startColumn]];
-            } else {
-                [result appendString:lines[lineIndex]];
-            }
-        }
-        [selectedStrings addObject:result];
-    }
-    return selectedStrings.copy;
-}
-
-NSString *getAnUniqueRandomStringForBuffer(XCSourceTextBuffer *buffer) {
-    NSString *randomString = [NSString randomStringWithLength:10].lowercaseString;
-    while (randomString
-           && buffer.completeBuffer
-           && [buffer.completeBuffer rangeOfString:randomString].location != NSNotFound) {
-        randomString = [NSString randomStringWithLength:10].lowercaseString;
-    }
-    return randomString;
-}
-
-NSArray<NSTextCheckingResult *> *getRegexMatchResult(NSString *string, NSString *regex) {
-    NSRegularExpression *re = [[NSRegularExpression alloc] initWithPattern:regex
-                                                                   options:NSRegularExpressionUseUnixLineSeparators
-                                                                     error:nil];
-    return [re matchesInString:string options:NSMatchingReportCompletion range:NSMakeRange(0, string.length)].copy;
-}
-
-NSInteger getStartLine(NSString *string, NSRange range) {
-    NSInteger ret = 0;
-    for (NSInteger index = 0; index < string.length && index <= range.location; index ++) {
-        if ([[string substringWithRange:NSMakeRange(index, 1)] isEqualToString:@"\n"]) {
-            ret ++;
-        }
-    }
-    return ret;
-}
-
-NSInteger getLineCount(NSString *string, NSRange range) {
-    NSInteger ret = 0;
-    for (NSInteger index = range.location; index < string.length && index <= range.location + range.length - 1; index ++) {
-        if ([[string substringWithRange:NSMakeRange(index, 1)] isEqualToString:@"\n"]) {
-            ret ++;
-        }
-    }
-    return ret == 0 ? 1 : ret;
-}
-
-NSRange getLineRange(NSString *string, NSRange range) {
-    return NSMakeRange(getStartLine(string, range), getLineCount(string, range));
-}
+static NSString *const defaultDecryptString = @"dl_getRealText";
 
 @implementation DLObfuscationCommand
 
@@ -111,7 +35,7 @@ NSRange getLineRange(NSString *string, NSRange range) {
     }
     
     NSArray *selectedStrings = getSelectedStrings(lines, selections);
-    if ([invocation.commandIdentifier isEqualToString:@"Obscure Method/Class Name"]) {
+    if ([invocation.commandIdentifier isEqualToString:ObfuscateMethodOrClassName]) {
         for (NSInteger index = 0; index < selectedStrings.count; index ++) {
             NSString *toBeObscured = selectedStrings[index];
             // \s*#\s*ifndef\s*%@\s*\n\s*#\s*define\s*%@\s*\w+\s*\n\s*#\s*endif\s*\n
@@ -129,7 +53,7 @@ NSRange getLineRange(NSString *string, NSRange range) {
                             atIndex:0];
             }
         }
-    } else if ([invocation.commandIdentifier isEqualToString:@"Obscure Property"]) {
+    } else if ([invocation.commandIdentifier isEqualToString:ObfuscateProperty]) {
         for (NSInteger index = 0; index < selectedStrings.count; index ++) {
             NSString *toBeObscured = selectedStrings[index];
             // \s*#\s*ifndef\s*%@\s*\n\s*#\s*define\s*%@\s*\w+\s*\n\s*#\s*endif\s*\n
@@ -159,14 +83,29 @@ NSRange getLineRange(NSString *string, NSRange range) {
                             atIndex:0];
             }
         }
+    } else if ([invocation.commandIdentifier isEqualToString:ObfuscateEncryptPlainText]) {
+        for (NSInteger index = 0; index < selectedStrings.count; index ++) {
+            NSString *selectedString = selectedStrings[index];
+            if (selectedString.length <= 3) {
+                continue;
+            }
+//            selectedString = [selectedString substringWithRange:NSMakeRange(2, selectedString.length - 3)];
+            NSString *toBeObscured = getLiteralStringFromUnEscapeString(selectedString);
+            NSString *obscuredString = [toBeObscured dl_encryptTextUsingXORWithRandomByte:0x11 version:0x11];
+//            NSString *replaceString = [NSString stringWithFormat:@"%@(@\"%@\")", defaultDecryptString, obscuredString];
+            NSString *replaceString = obscuredString;
+            XCSourceTextRange *selectRange = selections[index];
+            replace(lines, selectRange, replaceString);
+        }
+    } else if ([invocation.commandIdentifier isEqualToString:ObfuscateDecryptPlainText]) {
+        for (NSInteger index = 0; index < selectedStrings.count; index ++) {
+            NSString *replaceString = selectedStrings[index];
+            NSData *data = [[NSData alloc] initWithBase64EncodedString:replaceString options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            replaceString = [data dl_decryptTextUsingXOR];
+            XCSourceTextRange *selectRange = selections[index];
+            replace(lines, selectRange, replaceString);
+        }
     }
-    //    else if ([invocation.commandIdentifier isEqualToString:@"Obscure plain text"]) {
-    //        for (NSInteger index = 0; index < selectedStrings.count; index ++) {
-    //            NSString *toBeObscured = selectedStrings[index];
-    //            NSString *obscuredString = [toBeObscured encryptTextUsingXORWithRandomByte:0x11 version:0x11];
-    //            NSString *replaceString = [NSString stringWithFormat:@"%@(%@)", defaultDecryptString, obscuredString];
-    //        }
-    //    }
     completionHandler(nil);
 }
 

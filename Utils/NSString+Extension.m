@@ -10,7 +10,7 @@
 
 @implementation NSString (Extension)
 
-+ (NSString *)randomStringWithLength:(int)len {
++ (NSString *)dl_randomStringWithLength:(int)len {
     NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
     for (int i = 0; i < len; i ++) {
@@ -19,7 +19,7 @@
     return randomString;
 }
 
-- (NSString *)encryptTextUsingXORWithRandomByte:(Byte)randomByte version:(Byte)version {
+- (NSString *)dl_encryptTextUsingXORWithRandomByte:(Byte)randomByte version:(Byte)version {
     if (self == nil || self.length <= 0) {
         return nil;
     }

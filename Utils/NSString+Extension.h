@@ -10,7 +10,7 @@
 
 @interface NSString (Extension)
 
-+ (NSString *)randomStringWithLength:(int)len;
-- (NSString *)encryptTextUsingXORWithRandomByte:(Byte)randomByte version:(Byte)version;
++ (NSString *)dl_randomStringWithLength:(int)len;
+- (NSString *)dl_encryptTextUsingXORWithRandomByte:(Byte)randomByte version:(Byte)version;
 
 @end

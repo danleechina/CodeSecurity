@@ -8,25 +8,29 @@
 
 #import "DLObfuscationExtension.h"
 
+NSString *const ObfuscateProperty = @"ObfuscateProperty";
+NSString *const ObfuscateMethodOrClassName = @"ObfuscateMethodOrClassName";
+NSString *const ObfuscateEncryptPlainText = @"ObfuscateEncryptPlainText";
+NSString *const ObfuscateDecryptPlainText = @"ObfuscateDecryptPlainText";
+
 @implementation DLObfuscationExtension
 
-/*
-- (void)extensionDidFinishLaunching
-{
-    // If your extension needs to do any work at launch, implement this optional method.
-}
-*/
-
-
-- (NSArray <NSDictionary <XCSourceEditorCommandDefinitionKey, id> *> *)commandDefinitions
-{
-    return @[@{XCSourceEditorCommandIdentifierKey: @"Obscure Property",
-               XCSourceEditorCommandNameKey: @"Obscure Property",
+- (NSArray <NSDictionary <XCSourceEditorCommandDefinitionKey, id> *> *)commandDefinitions {
+    return @[@{XCSourceEditorCommandIdentifierKey: ObfuscateProperty,
+               XCSourceEditorCommandNameKey: @"Obfuscate Property",
                XCSourceEditorCommandClassNameKey: @"DLObfuscationCommand"},
              
-             @{XCSourceEditorCommandIdentifierKey: @"Obscure Method/Class Name",
-               XCSourceEditorCommandNameKey: @"Obscure Method/Class Name",
-               XCSourceEditorCommandClassNameKey: @"DLObfuscationCommand"}];
+             @{XCSourceEditorCommandIdentifierKey: ObfuscateMethodOrClassName,
+               XCSourceEditorCommandNameKey: @"Obfuscate Method/Class Name",
+               XCSourceEditorCommandClassNameKey: @"DLObfuscationCommand"},
+             
+             @{XCSourceEditorCommandIdentifierKey: ObfuscateEncryptPlainText,
+               XCSourceEditorCommandNameKey: @"Obfuscate Encrypt Plain Text",
+               XCSourceEditorCommandClassNameKey: @"DLObfuscationCommand"},
+             
+             @{XCSourceEditorCommandIdentifierKey: ObfuscateDecryptPlainText,
+               XCSourceEditorCommandNameKey: @"Obfuscate Decrypt Plain Text",
+               XCSourceEditorCommandClassNameKey: @"DLObfuscationCommand"},];
 }
 
 

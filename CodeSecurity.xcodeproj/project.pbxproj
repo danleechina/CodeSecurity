@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373DA5CA1E8CB8A200AC286F /* NSData+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 373DA5C91E8CB8A200AC286F /* NSData+Extension.m */; };
+		373DA5CB1E8CBB4C00AC286F /* NSData+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 373DA5C91E8CB8A200AC286F /* NSData+Extension.m */; };
+		373DA5D11E8CBD5E00AC286F /* DLUnExcapeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 373DA5D01E8CBD5E00AC286F /* DLUnExcapeString.m */; };
+		373DA5D21E8CBD5E00AC286F /* DLUnExcapeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 373DA5D01E8CBD5E00AC286F /* DLUnExcapeString.m */; };
+		373DA5D51E8CBE3800AC286F /* DLXcodeKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 373DA5D31E8CBE3800AC286F /* DLXcodeKit.m */; };
 		376062BF1E852FA600B410B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062BE1E852FA600B410B8 /* AppDelegate.m */; };
 		376062C21E852FA600B410B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 376062C11E852FA600B410B8 /* main.m */; };
 		376062C41E852FA600B410B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 376062C31E852FA600B410B8 /* Assets.xcassets */; };
@@ -44,6 +49,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		373DA5C81E8CB8A200AC286F /* NSData+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Extension.h"; path = "Utils/NSData+Extension.h"; sourceTree = "<group>"; };
+		373DA5C91E8CB8A200AC286F /* NSData+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Extension.m"; path = "Utils/NSData+Extension.m"; sourceTree = "<group>"; };
+		373DA5CE1E8CBCC300AC286F /* DLUnExcapeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DLUnExcapeString.h; path = Utils/DLUnExcapeString.h; sourceTree = "<group>"; };
+		373DA5D01E8CBD5E00AC286F /* DLUnExcapeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLUnExcapeString.m; path = Utils/DLUnExcapeString.m; sourceTree = "<group>"; };
+		373DA5D31E8CBE3800AC286F /* DLXcodeKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLXcodeKit.m; path = Utils/DLXcodeKit.m; sourceTree = "<group>"; };
+		373DA5D61E8CBE4800AC286F /* DLXcodeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DLXcodeKit.h; path = Utils/DLXcodeKit.h; sourceTree = "<group>"; };
 		376062BA1E852FA600B410B8 /* CodeSecurity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeSecurity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		376062BD1E852FA600B410B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		376062BE1E852FA600B410B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,6 +168,12 @@
 			children = (
 				376062E71E85318900B410B8 /* NSString+Extension.h */,
 				376062E81E85318900B410B8 /* NSString+Extension.m */,
+				373DA5C81E8CB8A200AC286F /* NSData+Extension.h */,
+				373DA5C91E8CB8A200AC286F /* NSData+Extension.m */,
+				373DA5CE1E8CBCC300AC286F /* DLUnExcapeString.h */,
+				373DA5D01E8CBD5E00AC286F /* DLUnExcapeString.m */,
+				373DA5D61E8CBE4800AC286F /* DLXcodeKit.h */,
+				373DA5D31E8CBE3800AC286F /* DLXcodeKit.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -264,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373DA5D11E8CBD5E00AC286F /* DLUnExcapeString.m in Sources */,
+				373DA5CA1E8CB8A200AC286F /* NSData+Extension.m in Sources */,
 				376062C21E852FA600B410B8 /* main.m in Sources */,
 				376062E91E85318900B410B8 /* NSString+Extension.m in Sources */,
 				376062BF1E852FA600B410B8 /* AppDelegate.m in Sources */,
@@ -274,6 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373DA5D21E8CBD5E00AC286F /* DLUnExcapeString.m in Sources */,
+				373DA5CB1E8CBB4C00AC286F /* NSData+Extension.m in Sources */,
+				373DA5D51E8CBE3800AC286F /* DLXcodeKit.m in Sources */,
 				376062DB1E852FB500B410B8 /* DLObfuscationExtension.m in Sources */,
 				376062EB1E85319C00B410B8 /* NSString+Extension.m in Sources */,
 				376062DE1E852FB500B410B8 /* DLObfuscationCommand.m in Sources */,
@@ -468,6 +490,7 @@
 				376062CD1E852FA600B410B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		376062E31E852FB500B410B8 /* Build configuration list for PBXNativeTarget "Obfuscation" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +499,7 @@
 				376062E51E852FB500B410B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

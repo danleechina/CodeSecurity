@@ -8,6 +8,11 @@
 
 #import <XcodeKit/XcodeKit.h>
 
+extern NSString *const ObfuscateProperty;
+extern NSString *const ObfuscateMethodOrClassName;
+extern NSString *const ObfuscateEncryptPlainText;
+extern NSString *const ObfuscateDecryptPlainText;
+
 @interface DLObfuscationExtension : NSObject <XCSourceEditorExtension>
 
 @end
